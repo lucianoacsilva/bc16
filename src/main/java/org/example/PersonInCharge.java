@@ -139,7 +139,7 @@ public class PersonInCharge {
                 + ", createdDateTime='" + getCreatedDateTime() + "'" + "}";
     }
 
-    public static PersonInCharge fromJSONString(String json) {
+    /* public static PersonInCharge fromJSONString(String json) {
         String parameterOne = new JSONObject(json).getString("personInChargeID");
         String parameterTwo = new JSONObject(json).getString("companyID");
         String parameterThree = new JSONObject(json).getString("name");
@@ -151,5 +151,5 @@ public class PersonInCharge {
                 parameterFive, parameterSix);
 
         return person;
-    }
+    } */
 }

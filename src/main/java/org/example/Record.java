@@ -22,14 +22,14 @@ public class Record {
     private String companyID;
     private String personInChargeID;
     private String storageDeviceOriginID;
-    private DateTime sentDateTime;
-    private DateTime recordDateTime;
+    private Date sentDateTime;
+    private Date recordDateTime;
 
 
     public Record() {
     }
 
-    public Record(String recordI, String seasonID, String processID, String companyID, String personInChargeID, String storageDeviceOriginID, DateTime sentDateTime, DateTime recordDateTime) {
+    public Record(String recordI, String seasonID, String processID, String companyID, String personInChargeID, String storageDeviceOriginID, Date sentDateTime, Date recordDateTime) {
         this.recordI = recordI;
         this.seasonID = seasonID;
         this.processID = processID;
@@ -179,10 +179,10 @@ public class Record {
         return new JSONObject(this).toString();
     }
 
-    public static Soybeans fromJSONString(String json) {
+    /* public static Soybeans fromJSONString(String json) {
         String value = new JSONObject(json).getString("value");
         Soybeans asset = new Soybeans();
         asset.setValue(value);
         return asset;
-    }
+    } */
 }

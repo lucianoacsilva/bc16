@@ -21,11 +21,11 @@ public class Season {
     private Date cordDateTime;
     private Soybeans soybean;
 
+
     public Season() {
     }
 
-    public Season(String seasonID, String companyID, String personInChargeID, Date sentDateTime, Date cordDateTime,
-            Soybeans soybean) {
+    public Season(String seasonID, String companyID, String personInChargeID, Date sentDateTime, Date cordDateTime, Soybeans soybean) {
         this.seasonID = seasonID;
         this.companyID = companyID;
         this.personInChargeID = personInChargeID;
@@ -58,19 +58,19 @@ public class Season {
         this.personInChargeID = personInChargeID;
     }
 
-    public DateTime getSentDateTime() {
+    public Date getSentDateTime() {
         return this.sentDateTime;
     }
 
-    public void setSentDateTime(DateTime sentDateTime) {
+    public void setSentDateTime(Date sentDateTime) {
         this.sentDateTime = sentDateTime;
     }
 
-    public DateTime getCordDateTime() {
+    public Date getCordDateTime() {
         return this.cordDateTime;
     }
 
-    public void setCordDateTime(DateTime cordDateTime) {
+    public void setCordDateTime(Date cordDateTime) {
         this.cordDateTime = cordDateTime;
     }
 
@@ -97,12 +97,12 @@ public class Season {
         return this;
     }
 
-    public Season sentDateTime(DateTime sentDateTime) {
+    public Season sentDateTime(Date sentDateTime) {
         this.sentDateTime = sentDateTime;
         return this;
     }
 
-    public Season cordDateTime(DateTime cordDateTime) {
+    public Season cordDateTime(Date cordDateTime) {
         this.cordDateTime = cordDateTime;
         return this;
     }
@@ -120,10 +120,7 @@ public class Season {
             return false;
         }
         Season season = (Season) o;
-        return Objects.equals(seasonID, season.seasonID) && Objects.equals(companyID, season.companyID)
-                && Objects.equals(personInChargeID, season.personInChargeID)
-                && Objects.equals(sentDateTime, season.sentDateTime)
-                && Objects.equals(cordDateTime, season.cordDateTime) && Objects.equals(soybean, season.soybean);
+        return Objects.equals(seasonID, season.seasonID) && Objects.equals(companyID, season.companyID) && Objects.equals(personInChargeID, season.personInChargeID) && Objects.equals(sentDateTime, season.sentDateTime) && Objects.equals(cordDateTime, season.cordDateTime) && Objects.equals(soybean, season.soybean);
     }
 
     @Override
@@ -133,16 +130,22 @@ public class Season {
 
     @Override
     public String toString() {
-        return "{" + " seasonID='" + getSeasonID() + "'" + ", companyID='" + getCompanyID() + "'"
-                + ", personInChargeID='" + getPersonInChargeID() + "'" + ", sentDateTime='" + getSentDateTime() + "'"
-                + ", cordDateTime='" + getCordDateTime() + "'" + ", soybean='" + getSoybean() + "'" + "}";
+        return "{" +
+            " seasonID='" + getSeasonID() + "'" +
+            ", companyID='" + getCompanyID() + "'" +
+            ", personInChargeID='" + getPersonInChargeID() + "'" +
+            ", sentDateTime='" + getSentDateTime() + "'" +
+            ", cordDateTime='" + getCordDateTime() + "'" +
+            ", soybean='" + getSoybean() + "'" +
+            "}";
     }
+   
 
     public String toJSONString() {
         return new JSONObject(this).toString();
     }
 
-    public static Season fromJSONString(String json) {
+   /*  public static Season fromJSONString(String json) {
         String parameterOne = new JSONObject(json).getString("seasonID");
         String parameterTwo = new JSONObject(json).getString("companyID");
         String parameterThree = new JSONObject(json).getString("personInChargeID");
@@ -154,5 +157,5 @@ public class Season {
                 parameterSix);
 
         return season;
-    }
+    } */
 }

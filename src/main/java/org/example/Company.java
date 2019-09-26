@@ -24,12 +24,11 @@ public class Company {
     private PersonInCharge[] personsInCharge;
     private StorageDeviceType[] storageDeviceTypes;
 
+
     public Company() {
     }
 
-    public Company(String companyId, String documentKey, String documentValue, String name, String phone, String email,
-            Process[] processes, Record[] records, PersonInCharge[] personsInCharge,
-            StorageDeviceType[] storageDeviceTypes) {
+    public Company(String companyId, String documentKey, String documentValue, String name, String phone, String email, agrichainProcess[] processes, Record[] records, PersonInCharge[] personsInCharge, StorageDeviceType[] storageDeviceTypes) {
         this.companyId = companyId;
         this.documentKey = documentKey;
         this.documentValue = documentValue;
@@ -90,11 +89,11 @@ public class Company {
         this.email = email;
     }
 
-    public Process[] getProcesses() {
+    public agrichainProcess[] getProcesses() {
         return this.processes;
     }
 
-    public void setProcesses(Process[] processes) {
+    public void setProcesses(agrichainProcess[] processes) {
         this.processes = processes;
     }
 
@@ -152,7 +151,7 @@ public class Company {
         return this;
     }
 
-    public Company processes(Process[] processes) {
+    public Company processes(agrichainProcess[] processes) {
         this.processes = processes;
         return this;
     }
@@ -180,34 +179,36 @@ public class Company {
             return false;
         }
         Company company = (Company) o;
-        return Objects.equals(companyId, company.companyId) && Objects.equals(documentKey, company.documentKey)
-                && Objects.equals(documentValue, company.documentValue) && Objects.equals(name, company.name)
-                && Objects.equals(phone, company.phone) && Objects.equals(email, company.email)
-                && Objects.equals(processes, company.processes) && Objects.equals(records, company.records)
-                && Objects.equals(personsInCharge, company.personsInCharge)
-                && Objects.equals(storageDeviceTypes, company.storageDeviceTypes);
+        return Objects.equals(companyId, company.companyId) && Objects.equals(documentKey, company.documentKey) && Objects.equals(documentValue, company.documentValue) && Objects.equals(name, company.name) && Objects.equals(phone, company.phone) && Objects.equals(email, company.email) && Objects.equals(processes, company.processes) && Objects.equals(records, company.records) && Objects.equals(personsInCharge, company.personsInCharge) && Objects.equals(storageDeviceTypes, company.storageDeviceTypes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(companyId, documentKey, documentValue, name, phone, email, processes, records,
-                personsInCharge, storageDeviceTypes);
+        return Objects.hash(companyId, documentKey, documentValue, name, phone, email, processes, records, personsInCharge, storageDeviceTypes);
     }
 
     @Override
     public String toString() {
-        return "{" + " companyId='" + getCompanyId() + "'" + ", documentKey='" + getDocumentKey() + "'"
-                + ", documentValue='" + getDocumentValue() + "'" + ", name='" + getName() + "'" + ", phone='"
-                + getPhone() + "'" + ", email='" + getEmail() + "'" + ", processes='" + getProcesses() + "'"
-                + ", records='" + getRecords() + "'" + ", personsInCharge='" + getPersonsInCharge() + "'"
-                + ", storageDeviceTypes='" + getStorageDeviceTypes() + "'" + "}";
+        return "{" +
+            " companyId='" + getCompanyId() + "'" +
+            ", documentKey='" + getDocumentKey() + "'" +
+            ", documentValue='" + getDocumentValue() + "'" +
+            ", name='" + getName() + "'" +
+            ", phone='" + getPhone() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", processes='" + getProcesses() + "'" +
+            ", records='" + getRecords() + "'" +
+            ", personsInCharge='" + getPersonsInCharge() + "'" +
+            ", storageDeviceTypes='" + getStorageDeviceTypes() + "'" +
+            "}";
     }
+    
 
     public String toJSONString() {
         return new JSONObject(this).toString();
     }
 
-    public static Company fromJSONString(String json) {
+    /* public static Company fromJSONString(String json) {
         String parameterOne = new JSONObject(json).getString("companyID");
         String parameterTwo = new JSONObject(json).getString("documentKey");
         String parameterThree = new JSONObject(json).getString("documentValue");
@@ -223,6 +224,6 @@ public class Company {
                 parameterSix, parameterSeven, parameterEight, parameterNine, parameterTen);
 
         return company;
-    }
+    } */
 
 }
