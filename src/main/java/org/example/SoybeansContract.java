@@ -20,9 +20,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
                 license =
                         @License(name = "Apache-2.0",
                                 url = ""),
-                                contact =  @Contact(email = "bc16@example.com",
-                                                name = "bc16",
-                                                url = "http://bc16.me")))
+                                contact =  @Contact(email = "AgrichainNew@example.com",
+                                                name = "AgrichainNew",
+                                                url = "http://AgrichainNew.me")))
 @Default
 public class SoybeansContract implements ContractInterface {
     public  SoybeansContract() {

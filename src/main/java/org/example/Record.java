@@ -16,7 +16,7 @@ public class Record {
 
     @Property()
 
-    private String recordI;
+    private String recordID;
     private String seasonID;
     private String processID;
     private String companyID;
@@ -29,8 +29,8 @@ public class Record {
     public Record() {
     }
 
-    public Record(String recordI, String seasonID, String processID, String companyID, String personInChargeID, String storageDeviceOriginID, Date sentDateTime, Date recordDateTime) {
-        this.recordI = recordI;
+    public Record(String recordID, String seasonID, String processID, String companyID, String personInChargeID, String storageDeviceOriginID, Date sentDateTime, Date recordDateTime) {
+        this.recordID = recordID;
         this.seasonID = seasonID;
         this.processID = processID;
         this.companyID = companyID;
@@ -40,12 +40,12 @@ public class Record {
         this.recordDateTime = recordDateTime;
     }
 
-    public String getRecordI() {
-        return this.recordI;
+    public String getRecordID() {
+        return this.recordID;
     }
 
-    public void setRecordI(String recordI) {
-        this.recordI = recordI;
+    public void setRecordID(String recordID) {
+        this.recordID = recordID;
     }
 
     public String getSeasonID() {
@@ -104,8 +104,8 @@ public class Record {
         this.recordDateTime = recordDateTime;
     }
 
-    public Record recordI(String recordI) {
-        this.recordI = recordI;
+    public Record recordID(String recordID) {
+        this.recordID = recordID;
         return this;
     }
 
@@ -152,18 +152,18 @@ public class Record {
             return false;
         }
         Record record = (Record) o;
-        return Objects.equals(recordI, record.recordI) && Objects.equals(seasonID, record.seasonID) && Objects.equals(processID, record.processID) && Objects.equals(companyID, record.companyID) && Objects.equals(personInChargeID, record.personInChargeID) && Objects.equals(storageDeviceOriginID, record.storageDeviceOriginID) && Objects.equals(sentDateTime, record.sentDateTime) && Objects.equals(recordDateTime, record.recordDateTime);
+        return Objects.equals(recordID, record.recordID) && Objects.equals(seasonID, record.seasonID) && Objects.equals(processID, record.processID) && Objects.equals(companyID, record.companyID) && Objects.equals(personInChargeID, record.personInChargeID) && Objects.equals(storageDeviceOriginID, record.storageDeviceOriginID) && Objects.equals(sentDateTime, record.sentDateTime) && Objects.equals(recordDateTime, record.recordDateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(recordI, seasonID, processID, companyID, personInChargeID, storageDeviceOriginID, sentDateTime, recordDateTime);
+        return Objects.hash(recordID, seasonID, processID, companyID, personInChargeID, storageDeviceOriginID, sentDateTime, recordDateTime);
     }
 
     @Override
     public String toString() {
         return "{" +
-            " recordI='" + getRecordI() + "'" +
+            " recordID='" + getRecordID() + "'" +
             ", seasonID='" + getSeasonID() + "'" +
             ", processID='" + getProcessID() + "'" +
             ", companyID='" + getCompanyID() + "'" +
@@ -173,7 +173,7 @@ public class Record {
             ", recordDateTime='" + getRecordDateTime() + "'" +
             "}";
     }
-
+    
     
     public String toJSONString() {
         return new JSONObject(this).toString();

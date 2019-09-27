@@ -90,6 +90,9 @@ public class ProcessType {
                 + ", languageKeyLabel='" + getLanguageKeyLabel() + "'" + "}";
     }
 
+    public String toJSONString() {
+        return new JSONObject(this).toString();
+    }
     public static ProcessType fromJSONString(String json) {
         String parameterOne = new JSONObject(json).getString("processTypeID");
         String parameterTwo = new JSONObject(json).getString("companyID");
