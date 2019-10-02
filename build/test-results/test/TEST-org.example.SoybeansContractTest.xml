@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.SoybeansContractTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-09-27T02:24:14" hostname="MBP-de-Luciano" time="0.819">
+<testsuite name="org.example.SoybeansContractTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-09-29T03:06:36" hostname="MacBook-Pro-de-Luciano.local" time="0.908">
   <properties/>
-  <testcase name="assetDelete()" classname="org.example.SoybeansContractTest" time="0.809"/>
+  <testcase name="assetDelete()" classname="org.example.SoybeansContractTest" time="0.897"/>
   <testcase name="assetRead()" classname="org.example.SoybeansContractTest" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -4,12 +4,13 @@
 
 package org.example;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import org.hyperledger.fabric.contract.annotation.DataType;
 import org.hyperledger.fabric.contract.annotation.Property;
 import org.json.JSONObject;
-
 
 @DataType()
 public class Record {
@@ -22,14 +23,14 @@ public class Record {
     private String companyID;
     private String personInChargeID;
     private String storageDeviceOriginID;
-    private Date sentDateTime;
-    private Date recordDateTime;
-
+    private String sentDateTime;
+    private String recordDateTime;
 
     public Record() {
     }
 
-    public Record(String recordID, String seasonID, String processID, String companyID, String personInChargeID, String storageDeviceOriginID, Date sentDateTime, Date recordDateTime) {
+    public Record(String recordID, String seasonID, String processID, String companyID, String personInChargeID,
+            String storageDeviceOriginID, String sentDateTime, String recordDateTime) {
         this.recordID = recordID;
         this.seasonID = seasonID;
         this.processID = processID;
@@ -88,19 +89,19 @@ public class Record {
         this.storageDeviceOriginID = storageDeviceOriginID;
     }
 
-    public Date getSentDateTime() {
+    public String getSentDateTime() {
         return this.sentDateTime;
     }
 
-    public void setSentDateTime(Date sentDateTime) {
+    public void setSentDateTime(String sentDateTime) {
         this.sentDateTime = sentDateTime;
     }
 
-    public Date getRecordDateTime() {
+    public String getRecordDateTime() {
         return this.recordDateTime;
     }
 
-    public void setRecordDateTime(Date recordDateTime) {
+    public void setRecordDateTime(String recordDateTime) {
         this.recordDateTime = recordDateTime;
     }
 
@@ -134,12 +135,12 @@ public class Record {
         return this;
     }
 
-    public Record sentDateTime(Date sentDateTime) {
+    public Record sentDateTime(String sentDateTime) {
         this.sentDateTime = sentDateTime;
         return this;
     }
 
-    public Record recordDateTime(Date recordDateTime) {
+    public Record recordDateTime(String recordDateTime) {
         this.recordDateTime = recordDateTime;
         return this;
     }
@@ -152,37 +153,53 @@ public class Record {
             return false;
         }
         Record record = (Record) o;
-        return Objects.equals(recordID, record.recordID) && Objects.equals(seasonID, record.seasonID) && Objects.equals(processID, record.processID) && Objects.equals(companyID, record.companyID) && Objects.equals(personInChargeID, record.personInChargeID) && Objects.equals(storageDeviceOriginID, record.storageDeviceOriginID) && Objects.equals(sentDateTime, record.sentDateTime) && Objects.equals(recordDateTime, record.recordDateTime);
+        return Objects.equals(recordID, record.recordID) && Objects.equals(seasonID, record.seasonID)
+                && Objects.equals(processID, record.processID) && Objects.equals(companyID, record.companyID)
+                && Objects.equals(personInChargeID, record.personInChargeID)
+                && Objects.equals(storageDeviceOriginID, record.storageDeviceOriginID)
+                && Objects.equals(sentDateTime, record.sentDateTime)
+                && Objects.equals(recordDateTime, record.recordDateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(recordID, seasonID, processID, companyID, personInChargeID, storageDeviceOriginID, sentDateTime, recordDateTime);
+        return Objects.hash(recordID, seasonID, processID, companyID, personInChargeID, storageDeviceOriginID,
+                sentDateTime, recordDateTime);
     }
 
     @Override
     public String toString() {
-        return "{" +
-            " recordID='" + getRecordID() + "'" +
-            ", seasonID='" + getSeasonID() + "'" +
-            ", processID='" + getProcessID() + "'" +
-            ", companyID='" + getCompanyID() + "'" +
-            ", personInChargeID='" + getPersonInChargeID() + "'" +
-            ", storageDeviceOriginID='" + getStorageDeviceOriginID() + "'" +
-            ", sentDateTime='" + getSentDateTime() + "'" +
-            ", recordDateTime='" + getRecordDateTime() + "'" +
-            "}";
+        return "{" + " recordID='" + getRecordID() + "'" + ", seasonID='" + getSeasonID() + "'" + ", processID='"
+                + getProcessID() + "'" + ", companyID='" + getCompanyID() + "'" + ", personInChargeID='"
+                + getPersonInChargeID() + "'" + ", storageDeviceOriginID='" + getStorageDeviceOriginID() + "'"
+                + ", sentDateTime='" + getSentDateTime() + "'" + ", recordDateTime='" + getRecordDateTime() + "'" + "}";
     }
-    
-    
+
     public String toJSONString() {
         return new JSONObject(this).toString();
     }
 
-    /* public static Soybeans fromJSONString(String json) {
-        String value = new JSONObject(json).getString("value");
-        Soybeans asset = new Soybeans();
-        asset.setValue(value);
+    public static Record fromJSONString(String json) {
+        String recordID = new JSONObject(json).getString("recordID");
+        String seasonID = new JSONObject(json).getString("seasonID");
+        String processID = new JSONObject(json).getString("processID");
+        String companyID = new JSONObject(json).getString("companyID");
+        String personInChargeID = new JSONObject(json).getString("personInChargeID");
+        String storageDeviceOriginID = new JSONObject(json).getString("storageDeviceOriginID");
+        String sendDateTime = new JSONObject(json).getString("sendDateTime");
+        String recordDateTime = new JSONObject(json).getString("recordDateTime");
+
+        Record asset = new Record();
+
+        asset.setRecordID(recordID);
+        asset.setCompanyID(companyID);
+        asset.setSeasonID(seasonID);
+        asset.setProcessID(processID);
+        asset.setPersonInChargeID(personInChargeID);
+        asset.storageDeviceOriginID(storageDeviceOriginID);
+        asset.setSentDateTime(sendDateTime);
+        asset.setRecordDateTime(recordDateTime);
+
         return asset;
-    } */
+    }
 }
