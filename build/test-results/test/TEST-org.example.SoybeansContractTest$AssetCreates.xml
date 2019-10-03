@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.SoybeansContractTest$AssetCreates" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-09-27T02:24:14" hostname="MBP-de-Luciano" time="0.005">
+<testsuite name="org.example.SoybeansContractTest$AssetCreates" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-09-30T14:48:34" hostname="luciano-ThinkPad-T480" time="0.003">
   <properties/>
-  <testcase name="alreadyExists()" classname="org.example.SoybeansContractTest$AssetCreates" time="0.002"/>
+  <testcase name="alreadyExists()" classname="org.example.SoybeansContractTest$AssetCreates" time="0.001"/>
   <testcase name="newAssetCreate()" classname="org.example.SoybeansContractTest$AssetCreates" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
