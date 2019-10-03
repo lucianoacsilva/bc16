@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.example.SoybeansContractTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-09-30T14:48:34" hostname="luciano-ThinkPad-T480" time="0.472">
   <properties/>
   <testcase name="assetDelete()" classname="org.example.SoybeansContractTest" time="0.46"/>
   <testcase name="assetRead()" classname="org.example.SoybeansContractTest" time="0.012"/>
+=======
+<testsuite name="org.example.SoybeansContractTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-09-29T03:06:36" hostname="MacBook-Pro-de-Luciano.local" time="0.908">
+  <properties/>
+  <testcase name="assetDelete()" classname="org.example.SoybeansContractTest" time="0.897"/>
+  <testcase name="assetRead()" classname="org.example.SoybeansContractTest" time="0.009"/>
+>>>>>>> aa659f57e12ac001e94caa9c0d1194f8a01acc69
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

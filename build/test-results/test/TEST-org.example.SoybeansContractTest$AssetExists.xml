@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.example.SoybeansContractTest$AssetExists" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-09-30T14:48:34" hostname="luciano-ThinkPad-T480" time="0.006">
   <properties/>
   <testcase name="noProperAsset()" classname="org.example.SoybeansContractTest$AssetExists" time="0.001"/>
   <testcase name="noKey()" classname="org.example.SoybeansContractTest$AssetExists" time="0.001"/>
   <testcase name="assetExists()" classname="org.example.SoybeansContractTest$AssetExists" time="0.003"/>
+=======
+<testsuite name="org.example.SoybeansContractTest$AssetExists" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-09-29T03:06:37" hostname="MacBook-Pro-de-Luciano.local" time="0.006">
+  <properties/>
+  <testcase name="noProperAsset()" classname="org.example.SoybeansContractTest$AssetExists" time="0.001"/>
+  <testcase name="noKey()" classname="org.example.SoybeansContractTest$AssetExists" time="0.002"/>
+  <testcase name="assetExists()" classname="org.example.SoybeansContractTest$AssetExists" time="0.001"/>
+>>>>>>> aa659f57e12ac001e94caa9c0d1194f8a01acc69
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
